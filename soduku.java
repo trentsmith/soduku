@@ -15,7 +15,7 @@
 					{1,2,3},{4,5,6},{7,8,9}
 					};
 			//puzzle placement in array used to convert j and i
-			int soduku1[][]=				
+			int soduku1[][]=	{			
 					{00,01,02},{10,11,12},{20,21,22},
 					{30,31,32},{40,41,42},{50,51,52},
 					{60,61,62},{70,71,72},{80,81,82},
@@ -48,7 +48,7 @@
 	{1,2,3,4,5,6,7,8,9},{1,2,3,4,5,6,7,8,9},{1,2,3,4,5,6,7,8,9},{1,2,3,4,5,6,7,8,9},
 	{1,2,3,4,5,6,7,8,9},{1,2,3,4,5,6,7,8,9},{1,2,3,4,5,6,7,8,9},{1,2,3,4,5,6,7,8,9}};
 
-			public int sol[][]= {
+			int sol[][]= {
 					{soduku[0][0],soduku[0][1],soduku[0][2],soduku[1][0],soduku[1][1],soduku[1][2],soduku[2][0],soduku[2][1],soduku[2][2]},
 					{soduku[3][0],soduku[3][1],soduku[3][2],soduku[4][0],soduku[4][1],soduku[4][2],soduku[5][0],soduku[5][1],soduku[5][2]},
 					{soduku[6][0],soduku[6][1],soduku[6][2],soduku[7][0],soduku[7][1],soduku[7][2],soduku[8][0],soduku[8][1],soduku[8][2]},
@@ -82,7 +82,7 @@
 					};
 					
 			//The solution's helper array
-			public int solh[][]={
+			int solh[][]={
 			{0,1,2,10,11,12,20,21,22},
 			{30,31,32,40,41,42,50,51,52},
 			{60,61,62,70,71,72,80,81,82},
@@ -196,7 +196,6 @@
 				System.out.println(" ");
 			}
 		
-			int j;
 			int k;
 			int l;
 			//loops to delete 
@@ -204,7 +203,7 @@
 			{
 				for(i=0;i<3;i++)
 				{
-					for(k=0;k<solh.size();k++)
+					for(k=0;k<solh.length;k++)
 					{
 						for(l=0;l<9;l++)
 						{
@@ -213,7 +212,7 @@
 								if(soduku[j][i]!=0)
 								{ 
 									int p;
-									for(p=0;p<array[k].size();p++)
+									for(p=0;p<array[k].length;p++)
 									{
 										if(array[k][p]==soduku[j][i])
 										{
@@ -222,7 +221,7 @@
 										}
 									}
 								}
-									if(array[k].size()==1)
+									if(array[k].length==1)
 									{
 										//delete array value
 										soduku[j].remove(i);
@@ -236,4 +235,5 @@
 					}
 				}
 			}
+	}
 	}
